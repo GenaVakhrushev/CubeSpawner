@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +19,7 @@ public class SpawnParamsInput : MonoBehaviour
 
     public void SpawnTimeChanged()
     {
-        float newValue = float.Parse(SpawnTimeInputField.text);
+        float newValue = float.Parse(SpawnTimeInputField.text, NumberStyles.Any, CultureInfo.InvariantCulture.NumberFormat);
 
         if (newValue <= 0)
         {
@@ -32,7 +33,7 @@ public class SpawnParamsInput : MonoBehaviour
 
     public void SpeedChanged()
     {
-        float newValue = float.Parse(SpeedInputField.text);
+        float newValue = float.Parse(SpeedInputField.text, NumberStyles.Any, CultureInfo.InvariantCulture.NumberFormat);
 
         if (newValue <= 0)
         {
@@ -46,7 +47,7 @@ public class SpawnParamsInput : MonoBehaviour
 
     public void HideDistanceChanged()
     {
-        float newValue = float.Parse(HideDistanceInputField.text);
+        float newValue = float.Parse(HideDistanceInputField.text, NumberStyles.Any, CultureInfo.InvariantCulture.NumberFormat);
 
         if (newValue <= 0)
         {
